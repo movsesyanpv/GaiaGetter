@@ -1,4 +1,4 @@
-#!/bin/bash -v
+#!/bin/bash
 
 get3lastchar()
 {
@@ -13,11 +13,11 @@ getAndUnpack()
   return 0
 }
 
-for (( k=1000; k<=$(expr $1 + 1000); k++))
+for (( k=$(expr $1 + 1000); k<=$(expr $2 + 1000); k++))
 do
-  for (( j=1000; j<=$(expr $2 + 1000); j++))
+  for (( j=$(expr $3 + 1000); j<=$(expr $4 + 1000); j++))
   do
-    for (( i=1000; i<=$(expr $3 + 1000); i++ ))
+    for (( i=$(expr $5 + 1000); i<=$(expr $6 + 1000); i++ ))
     do
       getAndUnpack $k $j $i
     done
